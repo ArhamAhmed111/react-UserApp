@@ -1,12 +1,13 @@
 
+
 import './card.css';
 import { userData } from '../utils/constant/product';
 import { useNavigate } from 'react-router-dom'; 
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const Card = () => {
   const navigate = useNavigate();
-
   const defaultProfileImage = './src/assets/DefaultImage/defaultImg.jpg'; 
 
   return (
@@ -18,13 +19,24 @@ const Card = () => {
           </div>
           <div className="pro-img">
             <img 
-              src={item.profileImage  ? item.profileImage : defaultProfileImage} 
+              src={item.profileImage ? item.profileImage : defaultProfileImage} 
               alt={item.name} 
             />
           </div>
           <h1>{item.name}</h1>
           <h3>{item.profession}</h3>
           <p>{item.description}</p>
+          <div className="social-icons" style={{ display: "flex", justifyContent: "center" }}>
+            <a href={item.facebook}>
+              <FontAwesomeIcon icon={faFacebook} size="1x" />
+            </a>
+            <a href={item.instagram}>
+              <FontAwesomeIcon icon={faInstagram} size="1x" />
+            </a>
+            <a href={item.twitter}>
+              <FontAwesomeIcon icon={faTwitter} size="1x" />
+            </a>
+          </div>
           <button onClick={() => navigate(`/mainpage/${item.id}`)}>View Detail</button>
         </div>
       ))}
@@ -33,4 +45,3 @@ const Card = () => {
 }
 
 export default Card;
-

@@ -73,4 +73,22 @@
   button:hover {
     background: #0056b3; 
   }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    
+    
+  }
+  
+  .social-icons a {
+
+    margin: 0 5px; 
+    color: #007bff; 
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #0056b3; 
+  }
   
